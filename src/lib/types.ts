@@ -20,4 +20,6 @@ export interface Word {
   category_id: number;
   province_id: number;
   status: "draft" | "review" | "published";
+  category?: Category;
+  province?: Province;
 }

@@ -1,43 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  getWordBySlug,
-  getPublishedWords,
-  getCategoryById,
-  getProvinceById,
-  words as allWords,
-} from "@/lib/data";
+import { getWordBySlug, getWords } from "@/lib/directus";
 import WordCard from "@/components/WordCard";
 
 // Generate static params for all published words (SEO)
-export function generateStaticParams() {
-  return getPublishedWords().map((word) => ({
+export async function generateStaticParams() {
+  const words = await getWords();
+  return words.map((word) => ({
     slug: word.slug,
   }));
 }
 
 // Dynamic SEO metadata
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  return params.then(({ slug }) => {
-    const word = getWordBySlug(slug);
-    if (!word) {
-      return { title: "Tidak Ditemukan" };
-    }
-    return {
-      title: `${word.title} — Isyarat BISINDO`,
+  const { slug } = await params;
+  const word = await getWordBySlug(slug);
+  
+  if (!word) {
+    return { title: "Tidak Ditemukan" };
+  }
+  
+  return {
+    title: `${word.title} — Isyarat BISINDO`,
+    description: word.description,
+    openGraph: {
+      title: `${word.title} — Kamus BISINDO`,
       description: word.description,
-      openGraph: {
-        title: `${word.title} — Kamus BISINDO`,
-        description: word.description,
-        type: "article",
-      },
-    };
-  });
+      type: "article",
+    },
+  };
 }
 
 export default async function WordDetailPage({
@@ -46,16 +42,18 @@ export default async function WordDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const word = getWordBySlug(slug);
+  const word = await getWordBySlug(slug);
 
   if (!word) {
     notFound();
   }
 
-  const category = getCategoryById(word.category_id);
-  const province = getProvinceById(word.province_id);
+  const category = word.category;
+  const province = word.province;
 
   // Get related words (same category, excluding current)
+  // For now, we fetch all words and filter. In production, consider a specific API call.
+  const allWords = await getWords();
   const relatedWords = allWords
     .filter((w) => w.category_id === word.category_id && w.id !== word.id && w.status === "published")
     .slice(0, 3);
@@ -92,7 +90,7 @@ export default async function WordDetailPage({
               <div className="relative aspect-video bg-surface-container-highest rounded-xl overflow-hidden shadow-ambient">
                 {word.video_url ? (
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     controls
                     preload="metadata"
                   >

@@ -1,7 +1,11 @@
+import { Word } from "@/lib/types";
 import SearchBar from "@/components/SearchBar";
-import { words } from "@/lib/data";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  words: Word[];
+}
+
+export default function HeroSection({ words }: HeroSectionProps) {
   const totalWords = words.length;
 
   return (
@@ -44,7 +48,7 @@ export default function HeroSection() {
         </p>
 
         {/* Search Bar */}
-        <SearchBar />
+        <SearchBar words={words} />
       </div>
     </section>
   );

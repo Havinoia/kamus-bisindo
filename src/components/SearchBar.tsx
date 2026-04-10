@@ -5,7 +5,11 @@ import { searchWords } from "@/lib/search";
 import type { Word } from "@/lib/types";
 import Link from "next/link";
 
-export default function SearchBar() {
+interface SearchBarProps {
+  words: Word[];
+}
+
+export default function SearchBar({ words }: SearchBarProps) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Word[]>([]);
   const [showResults, setShowResults] = useState(false);
@@ -14,14 +18,14 @@ export default function SearchBar() {
   const handleSearch = useCallback((value: string) => {
     setQuery(value);
     if (value.trim().length >= 2) {
-      const found = searchWords(value);
+      const found = searchWords(value, words);
       setResults(found.slice(0, 6));
       setShowResults(true);
     } else {
       setResults([]);
       setShowResults(false);
     }
-  }, []);
+  }, [words]);
 
   // Close dropdown on click outside
   useEffect(() => {

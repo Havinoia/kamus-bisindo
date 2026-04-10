@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { Word } from "@/lib/types";
 import WordCard from "@/components/WordCard";
-import { getPublishedWords } from "@/lib/data";
 
-export default function WordGrid() {
+interface WordGridProps {
+  words: Word[];
+}
+
+export default function WordGrid({ words }: WordGridProps) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const publishedWords = getPublishedWords();
 
   return (
     <section className="py-20 bg-surface">
@@ -61,7 +64,7 @@ export default function WordGrid() {
               : "grid grid-cols-1 gap-6"
           }
         >
-          {publishedWords.map((word, index) => (
+          {words.map((word, index) => (
             <WordCard key={word.id} word={word} index={index} />
           ))}
         </div>

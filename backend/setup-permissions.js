@@ -23,52 +23,40 @@ async function setup() {
       body: JSON.stringify(body)
     }).then(r => r.json().then(d => ({ status: r.status, data: d })));
 
-    console.log('--- Setting up Public Permissions ---');
+    console.log('--- Setting up Public Permissions (Directus v11) ---');
     
-    // We target the 'null' role which corresponds to Public in Directus
-    const publicRole = null; 
+    // In Directus v11, we assign permissions to the Public Policy
+    const publicPolicyId = 'abf8a154-5b1c-4a46-ac9c-7300570f4f17'; 
+
+    const setPermission = async (collection, action, config = {}) => {
+        console.log(`Setting ${action} permission for ${collection}...`);
+        const res = await post('/permissions', {
+            policy: publicPolicyId,
+            collection,
+            action,
+            fields: ['*'],
+            ...config
+        });
+        if (res.status >= 400) {
+            console.error(`Failed to set permission for ${collection}:`, res.data);
+        } else {
+            console.log(`Successfully set permission for ${collection}`);
+        }
+    };
 
     // Provinces: Read All
-    console.log('1. Setting Provinces permissions...');
-    await post('/permissions', {
-        role: publicRole,
-        collection: 'provinces',
-        action: 'read',
-        permissions: {},
-        fields: ['*']
-    });
+    await setPermission('provinces', 'read');
 
     // Categories: Read All
-    console.log('2. Setting Categories permissions...');
-    await post('/permissions', {
-        role: publicRole,
-        collection: 'categories',
-        action: 'read',
-        permissions: {},
-        fields: ['*']
-    });
+    await setPermission('categories', 'read');
 
     // Words: Read Only Published
-    console.log('3. Setting Words permissions (Published only)...');
-    await post('/permissions', {
-        role: publicRole,
-        collection: 'words',
-        action: 'read',
-        permissions: {
-            status: { _eq: 'published' }
-        },
-        fields: ['*']
+    await setPermission('words', 'read', {
+        permissions: { status: { _eq: 'published' } }
     });
 
     // Files: Read All (needed for thumbnails/videos)
-    console.log('4. Setting Files permissions...');
-    await post('/permissions', {
-        role: publicRole,
-        collection: 'directus_files',
-        action: 'read',
-        permissions: {},
-        fields: ['*']
-    });
+    await setPermission('directus_files', 'read');
 
     console.log('--- Permission Setup Complete! ---');
   } catch (error) {

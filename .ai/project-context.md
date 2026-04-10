@@ -187,8 +187,8 @@ Karena kita menggunakan Directus self-hosted, video dari `video_file` diakses me
 |---|-------|------------|--------|
 | 1 | **Fuzzy Search** | Fuse.js, tahan typo, pencarian di `title` + `description` | ✅ Done |
 | 2 | **Video Playback** | Putar video dari Storage Lokal di halaman detail | ✅ Done (Backend Ready) |
-| 3 | **Filter Kategori** | Filter berdasarkan 10 kategori (Kata Benda, Kerja, dll) | ✅ UI Done |
-| 4 | **Filter Wilayah** | Filter berdasarkan 9 provinsi | ✅ UI Done |
+| 3 | **Filter Kategori** | Filter berdasarkan 10 kategori (Kata Benda, Kerja, dll) | ✅ Done |
+| 4 | **Filter Wilayah** | Filter berdasarkan 9 provinsi | ✅ Done |
 | 5 | **Workflow Konten** | Draft → Review → Published di Directus | ✅ Done |
 | 6 | **Role & Permissions** | API publik Read-Only, Admin-only Publish | ✅ Done |
 | 7 | **SEO & Slug** | Setiap kata punya slug unik, dynamic metadata | ✅ Done |
@@ -220,12 +220,13 @@ Karena kita menggunakan Directus self-hosted, video dari `video_file` diakses me
 - [x] Hubungkan Directus Storage ke Local (Folder /uploads)
 - [x] Skrip otomasi schema & data clearing
 
-### FASE 3: Integrasi Frontend ↔ Backend [/]
-- [/] Sinkronisasi TypeScript types dengan Directus Schema
-- [ ] Ganti mock data dengan fetch dari Directus API
-- [ ] Implementasi SDK Directus atau Fetch API wrapper
-- [ ] Dynamic ISR/SSG dari data Directus
-- [ ] Map asset ID ke URL video asli
+### FASE 3: Integrasi Frontend ↔ Backend ✅
+- [x] Sinkronisasi TypeScript types dengan Directus Schema
+- [x] Ganti mock data dengan fetch dari Directus API
+- [x] Implementasi Fetch API wrapper (`lib/directus.ts`)
+- [x] Dynamic ISR/SSG dari data Directus
+- [x] Map asset ID ke URL video asli
+- [x] Integrasi Filter (Alphabet, Category, Province) ke URL Params
 
 ### FASE 4: Polish & Enhancement 🔲
 - [ ] Loading states & skeleton screens
@@ -278,7 +279,6 @@ Gunakan skrip di folder `backend/` untuk mengelola Directus tanpa harus masuk ke
 |--------|--------|
 | `setup-schema.js` | Inisialisasi awal seluruh koleksi, field, dan relasi. |
 | `setup-permissions.js` | Mengatur hak akses Public agar bisa me-read data. |
-| `seed-sample-data.js` | Mengisi data contoh minimal (Umum, Jakarta, Thank You). |
 | `clear-data.js` | Menghapus semua isi item di Words, Categories, dan Provinces. |
 | `fix-relation.js` | Memperbaiki relasi `video_file` jika library media bermasalah. |
 | `fix-display.js` | Memperbaiki tampilan `--` menjadi Nama di dropdown relasi. |

@@ -1,12 +1,14 @@
-"use client";
-
-import { useState } from "react";
+import { Word } from "@/lib/types";
+import Link from "next/link";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-export default function AlphabetFilter() {
-  const [activeLetter, setActiveLetter] = useState("A");
+interface AlphabetFilterProps {
+  words: Word[];
+  activeLetter: string;
+}
 
+export default function AlphabetFilter({ words, activeLetter }: AlphabetFilterProps) {
   return (
     <section className="bg-surface-container-low py-12">
       <div className="max-w-screen-xl mx-auto px-6 lg:px-8">
@@ -21,9 +23,10 @@ export default function AlphabetFilter() {
         {/* Alphabet buttons */}
         <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
           {ALPHABET.map((letter) => (
-            <button
+            <Link
               key={letter}
-              onClick={() => setActiveLetter(letter)}
+              href={`/?letter=${letter}`}
+              scroll={false}
               className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl font-bold text-sm md:text-base transition-all duration-200 ${
                 activeLetter === letter
                   ? "bg-primary text-on-primary shadow-md scale-105"
@@ -31,7 +34,7 @@ export default function AlphabetFilter() {
               }`}
             >
               {letter}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

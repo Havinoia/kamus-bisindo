@@ -1,6 +1,5 @@
 import Fuse from "fuse.js";
 import type { Word } from "./types";
-import { getPublishedWords } from "./data";
 
 const fuseOptions = {
   keys: [
@@ -12,21 +11,12 @@ const fuseOptions = {
   minMatchCharLength: 2,
 };
 
-let fuseInstance: Fuse<Word> | null = null;
-
-function getFuseInstance(): Fuse<Word> {
-  if (!fuseInstance) {
-    fuseInstance = new Fuse(getPublishedWords(), fuseOptions);
-  }
-  return fuseInstance;
-}
-
-export function searchWords(query: string): Word[] {
+export function searchWords(query: string, words: Word[]): Word[] {
   if (!query || query.trim().length < 2) {
-    return getPublishedWords();
+    return words;
   }
 
-  const fuse = getFuseInstance();
+  const fuse = new Fuse(words, fuseOptions);
   const results = fuse.search(query.trim());
   return results.map((result) => result.item);
 }

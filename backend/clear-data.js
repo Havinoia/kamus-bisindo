@@ -1,4 +1,4 @@
-const DIRECTUS_URL = 'http://localhost:8055';
+const DIRECTUS_URL = 'http://127.0.0.1:8055';
 const ADMIN_EMAIL = 'admin@bisindo.id';
 const ADMIN_PASSWORD = 'password123';
 
