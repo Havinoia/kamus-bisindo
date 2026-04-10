@@ -1,0 +1,40 @@
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - "8055:8055"
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      KEY: "${KEY}"
+      SECRET: "${SECRET}"
+      NODE_OPTIONS: "--dns-result-order=ipv4first"
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
+
+      # Database (Supabase)
+      DB_CLIENT: "pg"
+      DB_HOST: "${DB_HOST}"
+      DB_PORT: "${DB_PORT}"
+      DB_DATABASE: "${DB_DATABASE}"
+      DB_USER: "${DB_USER}"
+      DB_PASSWORD: "${DB_PASSWORD}"
+      DB_SSL: "true"
+      DB_SSL__REJECT_UNAUTHORIZED: "false"
+
+      # Storage (Local - Default)
+      # Video akan tersimpan di folder ./uploads
+      STORAGE_LOCATIONS: "local"
+      STORAGE_LOCAL_DRIVER: "local"
+      STORAGE_LOCAL_ROOT: "/directus/uploads"
+
+      # Admin
+      ADMIN_EMAIL: "${ADMIN_EMAIL}"
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD}"
+
+      # Misc
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "true"

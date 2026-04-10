@@ -36,6 +36,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk buah apel, biasanya dilakukan dengan gerakan tangan di area pipi. Tangan dominan membentuk huruf 'A' lalu diputar pelan di pipi.",
     video_url: "",
+    video_file: null,
     category_id: 1,
     province_id: 1,
     status: "published",
@@ -47,6 +48,7 @@ export const words: Word[] = [
     description:
       "Variasi isyarat khusus untuk daerah istimewa Yogyakarta yang menunjukkan identitas lokal. Gerakan tangan membentuk simbol khas keraton.",
     video_url: "",
+    video_file: null,
     category_id: 10,
     province_id: 5,
     status: "published",
@@ -58,6 +60,7 @@ export const words: Word[] = [
     description:
       "Isyarat salam pembuka yang paling dasar dan sering digunakan dalam percakapan sehari-hari. Lambaikan tangan terbuka ke arah lawan bicara.",
     video_url: "",
+    video_file: null,
     category_id: 9,
     province_id: 1,
     status: "published",
@@ -69,6 +72,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk aktivitas makan. Tangan dominan membentuk seperti memegang sendok dan digerakkan menuju mulut secara berulang.",
     video_url: "",
+    video_file: null,
     category_id: 2,
     province_id: 1,
     status: "published",
@@ -80,6 +84,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk mengungkapkan rasa terima kasih. Telapak tangan menyentuh dagu lalu digerakkan ke depan dengan senyuman.",
     video_url: "",
+    video_file: null,
     category_id: 9,
     province_id: 1,
     status: "published",
@@ -91,6 +96,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk tempat pendidikan atau aktivitas belajar. Kedua tangan digerakkan seperti membuka buku, lalu ditepuk pelan.",
     video_url: "",
+    video_file: null,
     category_id: 8,
     province_id: 1,
     status: "published",
@@ -102,6 +108,7 @@ export const words: Word[] = [
     description:
       "Isyarat warna merah. Jari telunjuk diletakkan di bibir bawah lalu ditarik ke bawah perlahan.",
     video_url: "",
+    video_file: null,
     category_id: 4,
     province_id: 1,
     status: "published",
@@ -113,6 +120,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk panggilan ibu atau mama. Jari telunjuk dan jari tengah menyentuh pipi dengan lembut.",
     video_url: "",
+    video_file: null,
     category_id: 5,
     province_id: 1,
     status: "published",
@@ -124,6 +132,7 @@ export const words: Word[] = [
     description:
       "Isyarat angka satu. Jari telunjuk diangkat ke atas sementara jari lain mengepal di tangan dominan.",
     video_url: "",
+    video_file: null,
     category_id: 3,
     province_id: 1,
     status: "published",
@@ -135,6 +144,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk perasaan senang atau bahagia. Kedua telapak tangan diletakkan di dada dan digerakkan memutar ke arah atas.",
     video_url: "",
+    video_file: null,
     category_id: 6,
     province_id: 1,
     status: "published",
@@ -146,6 +156,7 @@ export const words: Word[] = [
     description:
       "Isyarat waktu pagi hari. Tangan dominan diangkat dari bawah ke atas seperti matahari terbit.",
     video_url: "",
+    video_file: null,
     category_id: 7,
     province_id: 1,
     status: "published",
@@ -157,6 +168,7 @@ export const words: Word[] = [
     description:
       "Isyarat untuk kota Jakarta. Gerakan tangan membentuk huruf J diikuti dengan gerakan menunjuk arah utara.",
     video_url: "",
+    video_file: null,
     category_id: 10,
     province_id: 2,
     status: "published",

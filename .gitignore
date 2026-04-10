@@ -24,8 +24,10 @@
 .DS_Store
 *.pem
 
-# ai context (local only)
-.ai/
+# backend
+/backend/uploads
+/backend/extensions
+/backend/.env
 
 # debug
 npm-debug.log*

@@ -16,6 +16,7 @@ export interface Word {
   slug: string;
   description: string;
   video_url: string;
+  video_file: string | null;
   category_id: number;
   province_id: number;
   status: "draft" | "review" | "published";
