@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kamus BISINDO - Bridging Movement and Meaning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Public+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#191b22",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#005047",
+                      "tertiary": "#004c43",
+                      "surface-dim": "#d9d9e3",
+                      "on-primary-fixed-variant": "#293ca0",
+                      "on-primary": "#ffffff",
+                      "secondary": "#7e5700",
+                      "surface-bright": "#faf8ff",
+                      "secondary-fixed": "#ffdeac",
+                      "surface-container-highest": "#e1e2ec",
+                      "on-error": "#ffffff",
+                      "surface": "#faf8ff",
+                      "surface-variant": "#e1e2ec",
+                      "surface-container": "#ededf7",
+                      "inverse-primary": "#bac3ff",
+                      "on-primary-fixed": "#00105c",
+                      "secondary-container": "#feb300",
+                      "tertiary-container": "#00665a",
+                      "surface-tint": "#4355b9",
+                      "secondary-fixed-dim": "#ffba38",
+                      "surface-container-low": "#f2f3fd",
+                      "on-primary-container": "#cacfff",
+                      "on-secondary-fixed": "#281900",
+                      "on-secondary-container": "#6a4800",
+                      "primary-fixed": "#dee0ff",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#bac3ff",
+                      "on-secondary-fixed-variant": "#604100",
+                      "primary-container": "#3f51b5",
+                      "background": "#faf8ff",
+                      "outline-variant": "#c5c5d4",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#2e3038",
+                      "surface-container-high": "#e7e7f1",
+                      "outline": "#757684",
+                      "inverse-on-surface": "#f0f0fa",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#454652",
+                      "on-secondary": "#ffffff",
+                      "primary": "#24389c",
+                      "tertiary-fixed": "#97f3e2",
+                      "on-tertiary-container": "#86e2d1",
+                      "tertiary-fixed-dim": "#7ad7c6",
+                      "on-tertiary-fixed": "#00201b",
+                      "on-background": "#191b22",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "1.5rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Plus Jakarta Sans"],
+                      "body": ["Public Sans"],
+                      "label": ["Public Sans"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #faf8ff; color: #191b22; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(20px); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-indigo-900 dark:text-indigo-100 font-headline">
+                Kamus BISINDO
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-indigo-700 dark:text-amber-400 font-bold border-b-2 border-indigo-700 dark:border-amber-400 pb-1 font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="#">Dictionary</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 font-['Plus_Jakarta_Sans'] text-sm tracking-tight transition-all duration-300" href="#">Tutorials</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 font-['Plus_Jakarta_Sans'] text-sm tracking-tight transition-all duration-300" href="#">Regions</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 font-['Plus_Jakarta_Sans'] text-sm tracking-tight transition-all duration-300" href="#">About</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all active:scale-95 duration-200 ease-in-out">
+                    Sign In
+                </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface py-20 lg:py-32">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+<div class="absolute top-1/2 -right-24 w-80 h-80 bg-secondary rounded-full blur-3xl"></div>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto px-8 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container rounded-full mb-8 font-label font-bold text-sm shadow-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
+                    36 Kosa Isyarat
+                </div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-primary tracking-tighter leading-tight mb-6">
+                    Kamus BISINDO
+                </h1>
+<p class="max-w-2xl mx-auto text-body text-lg text-on-surface-variant leading-relaxed mb-12">
+                    Pelajari Bahasa Isyarat Indonesia dengan cara yang lebih taktil dan bermakna. Akses ribuan kosa kata dalam format video berkualitas tinggi untuk menghubungkan gerakan dan makna.
+                </p>
+<!-- Search Bar Container -->
+<div class="max-w-3xl mx-auto relative">
+<div class="flex items-center bg-surface-container-lowest p-2 rounded-full shadow-xl shadow-primary/5 border border-outline-variant/20 focus-within:ring-2 focus-within:ring-secondary transition-all">
+<span class="material-symbols-outlined ml-6 text-outline" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 px-4 py-4 text-lg text-on-surface placeholder:text-outline" placeholder="Cari kosa isyarat (misal: Halo, Makan, Terima Kasih)..." type="text"/>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-lg transition-all active:scale-95">
+                            Cari
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Alphabet Filter -->
+<section class="bg-surface-container-low py-12">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-1 w-12 bg-secondary rounded-full"></div>
+<h2 class="text-xl font-headline font-bold text-primary"># Berdasarkan abjad</h2>
+</div>
+<div class="flex flex-wrap gap-2 md:gap-3 justify-center">
+<!-- Alphabet Buttons -->
+<button class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-primary text-on-primary font-bold shadow-md hover:scale-105 transition-transform">A</button>
+<script>
+                        const letters = "BCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+                        letters.forEach(l => {
+                            document.write(`<button class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl bg-surface-container-lowest text-primary font-bold hover:bg-primary-fixed hover:text-primary transition-all border border-outline-variant/10 shadow-sm">${l}</button>`);
+                        });
+                    </script>
+</div>
+</div>
+</section>
+<!-- Main Content: Daftar Kosa Isyarat -->
+<section class="py-20 bg-surface">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight mb-2">Daftar Kosa Isyarat</h2>
+<p class="text-on-surface-variant font-body">Menampilkan hasil pencarian terpopuler minggu ini</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-xl">sort</span>
+                            Terbaru
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2 rounded-full bg-secondary-container text-on-secondary-container font-bold shadow-sm">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+                            Grid
+                        </button>
+</div>
+</div>
+<!-- Video Grid - Bento Layout Inspiration -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Apel -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+<img alt="Sign language for Apple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a close-up of a person performing a sign language gesture for apple with a soft focus indoor background and warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDktiZyzEBYZfN72txvFCxpJUJN5CBvTxP3GYauupjA5HDX2Wj7PjEOkwlNBjiDGcRADt0xLN7WSgKm-7HgIKV8RVI4koB73Uj1YUGxSAtgrOGjrTXv7VZN8Z8BS8WNXZP1Bvj6RlHT5Ay9CJruUQdqfZ1kpK9AHdwpGSx6jYtkQlxbZAzN8pSW7xWwCttjmm_w_5Vgh2juYWry4Y2Ywq8-k2lNp_WHHLu-8GgNGGezhC-rvlRea0jh3_F3pWILoDtr0Dfln-oEdave"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest shadow-sm">Kata Benda</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Apel</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Isyarat untuk buah apel, biasanya dilakukan dengan gerakan tangan di area pipi.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                    Nasional
+                                </div>
+<button class="text-secondary hover:underline font-bold text-sm flex items-center gap-1">
+                                    Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Yogyakarta (Asymmetric emphasis) -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+<img alt="Sign language for Yogyakarta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a professional demonstration of sign language for a city name with clear hand movements and a neutral modern background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSNE1PH8tuLMfADAuhYLfZaXomh4lrSOoGL4kG8CoEQR-F5YYbjDo2t2Xkj3-NuF5wjC4CZaqblFWNS5jLnsoFBr5OXL6MWlTzE5ax-IYsrCACA0gt8jBolj8IYb_psc80pvhqhcHlikwjbcvSkjHy3RGByqOdRgmSn7KTSvkJIU6m3lF2DXav2qYcIa63Cuyz5Tz_rBHb1Y0mExsePG1qTtd4NaQ0X2iqepiReRcsVWD8Ht0bpTwRR4T63wN1zI4RU6GCsqIfqAJS"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest shadow-sm">Wilayah</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Yogyakarta</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Variasi isyarat khusus untuk daerah istimewa Yogyakarta yang menunjukkan identitas lokal.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                    DIY
+                                </div>
+<button class="text-secondary hover:underline font-bold text-sm flex items-center gap-1">
+                                    Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Halo -->
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+<div class="relative aspect-video overflow-hidden bg-surface-container-highest">
+<img alt="Sign language for Halo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a friendly woman smiling while making a greeting sign in sign language, bright natural outdoor lighting with bokeh trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvQj_gB-BQ6k5eDbaP8ViTb-45dw3BN77Whk0kwqYqjC5KMbjNzeWpeASi9E4Sp8PJ1ZQrnWhXq1sZwvtcRdQvhHIQvfqIIHi7LoVYcJ244e8SNBe5YffrOSUOMKf0Hbef1G2D-EBCk245FVCef2xF6RobevI03WeTsTb55G3yGjn46lwaAp3ZecNM04KiG1V9E-Mh9cM4b48jXhg1ZVQXFFEWbvhTc-roBanpiidB3BkSTsCNDG_ew6mjYtbCwkTXerIG-nXXPng1"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-md text-xs font-bold uppercase tracking-widest shadow-sm">Percakapan</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Halo</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Isyarat salam pembuka yang paling dasar dan sering digunakan dalam percakapan sehari-hari.</p>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                    Nasional
+                                </div>
+<button class="text-secondary hover:underline font-bold text-sm flex items-center gap-1">
+                                    Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<button class="inline-flex items-center gap-3 bg-surface-container-low text-primary px-10 py-4 rounded-full font-bold hover:bg-primary-fixed transition-all border border-outline-variant/30">
+                        Lihat Semua Isyarat
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Filters -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-screen-xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Wilayah Provinsi Filter -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">map</span>
+<h2 class="text-2xl font-headline font-bold text-primary">Wilayah Provinsi</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">DKI Jakarta</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Jawa Barat</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Jawa Tengah</button>
+<button class="text-left px-4 py-2 rounded-lg bg-secondary/10 text-secondary font-bold text-sm">DI Yogyakarta</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Jawa Timur</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Banten</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Bali</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Sumatera Utara</button>
+<button class="text-left px-4 py-2 rounded-lg hover:bg-primary-fixed/30 text-on-surface-variant text-sm transition-colors">Lainnya...</button>
+</div>
+</div>
+<!-- Kategori Filter -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl">category</span>
+<h2 class="text-2xl font-headline font-bold text-primary">Kategori</h2>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="px-5 py-2 bg-tertiary-container text-on-tertiary-container rounded-full text-sm font-bold shadow-sm">Kata Benda</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Kata Kerja</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Angka</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Warna</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Keluarga</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Perasaan</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Waktu</span>
+<span class="px-5 py-2 bg-surface-container-low text-on-surface-variant rounded-full text-sm font-bold hover:bg-primary-fixed transition-colors cursor-pointer">Pendidikan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 px-8 max-w-screen-2xl mx-auto border-t border-slate-200 dark:border-slate-800">
+<div class="lg:col-span-1">
+<div class="text-lg font-bold text-indigo-900 dark:text-indigo-100 mb-4">Kamus BISINDO</div>
+<p class="font-['Public_Sans'] text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+                    Inisiatif digital untuk memperluas akses komunikasi inklusif bagi seluruh masyarakat Indonesia.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">language</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-6">Navigasi</h4>
+<ul class="space-y-3 font-['Public_Sans'] text-sm text-slate-500">
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Daftar Isyarat</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Tutorial Dasar</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Peta Wilayah</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Tentang Kami</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-6">Dukungan</h4>
+<ul class="space-y-3 font-['Public_Sans'] text-sm text-slate-500">
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Accessibility Statement</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Contribution Guide</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-indigo-600 transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface mb-6">Berlangganan</h4>
+<p class="text-sm text-slate-500 mb-4">Dapatkan update kosa kata terbaru langsung di email Anda.</p>
+<div class="flex">
+<input class="bg-white border border-outline-variant/30 rounded-l-lg px-4 py-2 w-full focus:ring-1 focus:ring-primary focus:border-primary" placeholder="Email Anda" type="email"/>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-r-lg font-bold">Kirim</button>
+</div>
+</div>
+</div>
+<div class="py-6 px-8 max-w-screen-2xl mx-auto border-t border-slate-100 text-center">
+<p class="font-['Public_Sans'] text-sm text-slate-500 dark:text-slate-400">
+                © 2024 Kamus BISINDO. Bridging movement and meaning.
+            </p>
+</div>
+</footer>
+</body></html>

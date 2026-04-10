@@ -1,26 +1,175 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===== DESIGN SYSTEM: The Tactile Scholar ===== */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Primary --- */
+  --color-primary: #24389c;
+  --color-primary-container: #3f51b5;
+  --color-primary-fixed: #dee0ff;
+  --color-primary-fixed-dim: #bac3ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #cacfff;
+  --color-on-primary-fixed: #00105c;
+  --color-on-primary-fixed-variant: #293ca0;
+  --color-inverse-primary: #bac3ff;
+
+  /* --- Secondary (Amber) --- */
+  --color-secondary: #7e5700;
+  --color-secondary-container: #feb300;
+  --color-secondary-fixed: #ffdeac;
+  --color-secondary-fixed-dim: #ffba38;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #6a4800;
+  --color-on-secondary-fixed: #281900;
+  --color-on-secondary-fixed-variant: #604100;
+
+  /* --- Tertiary (Teal) --- */
+  --color-tertiary: #004c43;
+  --color-tertiary-container: #00665a;
+  --color-tertiary-fixed: #97f3e2;
+  --color-tertiary-fixed-dim: #7ad7c6;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #86e2d1;
+  --color-on-tertiary-fixed: #00201b;
+  --color-on-tertiary-fixed-variant: #005047;
+
+  /* --- Surface & Background --- */
+  --color-surface: #faf8ff;
+  --color-surface-dim: #d9d9e3;
+  --color-surface-bright: #faf8ff;
+  --color-surface-variant: #e1e2ec;
+  --color-surface-tint: #4355b9;
+  --color-surface-container: #ededf7;
+  --color-surface-container-low: #f2f3fd;
+  --color-surface-container-high: #e7e7f1;
+  --color-surface-container-highest: #e1e2ec;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface: #191b22;
+  --color-on-surface-variant: #454652;
+  --color-inverse-surface: #2e3038;
+  --color-inverse-on-surface: #f0f0fa;
+  --color-background: #faf8ff;
+  --color-on-background: #191b22;
+
+  /* --- Outline --- */
+  --color-outline: #757684;
+  --color-outline-variant: #c5c5d4;
+
+  /* --- Error --- */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* --- Typography --- */
+  --font-headline: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+  --font-label: "Public Sans", system-ui, sans-serif;
+
+  /* --- Border Radius --- */
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== BASE STYLES ===== */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+}
+
+/* ===== MATERIAL SYMBOLS ===== */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== GLASS MORPHISM ===== */
+
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ===== AMBIENT SHADOWS ===== */
+
+.shadow-ambient {
+  box-shadow: 0 8px 32px rgba(25, 27, 34, 0.06);
+}
+
+.shadow-ambient-lg {
+  box-shadow: 0 16px 64px rgba(25, 27, 34, 0.08);
+}
+
+/* ===== HERO GRADIENT ===== */
+
+.gradient-primary {
+  background: linear-gradient(135deg, #24389c 0%, #3f51b5 100%);
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* ===== LINE CLAMP UTILITY ===== */
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
 }
