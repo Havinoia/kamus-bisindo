@@ -22,15 +22,26 @@ export default function AlphabetFilter({ words, activeLetter }: AlphabetFilterPr
 
         {/* Alphabet buttons */}
         <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+          <Link
+            href="/"
+            scroll={false}
+            className={`px-4 h-10 md:h-12 flex items-center justify-center rounded-xl font-bold text-sm md:text-base border transition-all duration-200 ${
+              !activeLetter || activeLetter === "all" || activeLetter === ""
+                ? "bg-primary text-on-primary shadow-md scale-105 border-primary"
+                : "bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:text-primary shadow-sm border-outline-variant/10"
+            }`}
+          >
+            Semua
+          </Link>
           {ALPHABET.map((letter) => (
             <Link
               key={letter}
               href={`/?letter=${letter}`}
               scroll={false}
-              className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl font-bold text-sm md:text-base transition-all duration-200 ${
+              className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl font-bold text-sm md:text-base border transition-all duration-200 ${
                 activeLetter === letter
-                  ? "bg-primary text-on-primary shadow-md scale-105"
-                  : "bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:text-primary shadow-sm"
+                  ? "bg-primary text-on-primary shadow-md scale-105 border-primary"
+                  : "bg-surface-container-lowest text-primary hover:bg-primary-fixed hover:text-primary shadow-sm border-outline-variant/10"
               }`}
             >
               {letter}

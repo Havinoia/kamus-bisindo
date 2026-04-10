@@ -23,7 +23,7 @@ export function getAssetUrl(fileId: any): string {
  * Fetch all published words with their related categories and provinces
  */
 export async function getWords(): Promise<Word[]> {
-  const url = `${DIRECTUS_URL}/items/words?fields=*,category.*,province.*&filter[status][_eq]=published`;
+  const url = `${DIRECTUS_URL}/items/words?fields=*,category.*,province.*&filter[status][_eq]=published&sort=title`;
   const res = await fetch(url, {
     next: { revalidate: 1 },
   });

@@ -20,10 +20,10 @@ export default async function HomePage({
     getProvinces(),
   ]);
 
-  // Apply Filters
-  let filteredWords = words;
+  // Apply Filters & Ensure Sorting (A-Z)
+  let filteredWords = [...words].sort((a, b) => a.title.localeCompare(b.title));
 
-  if (activeLetter) {
+  if (activeLetter && activeLetter !== "all") {
     filteredWords = filteredWords.filter((w) =>
       w.title.toUpperCase().startsWith(activeLetter.toUpperCase())
     );
@@ -44,7 +44,7 @@ export default async function HomePage({
   return (
     <>
       <HeroSection words={words} />
-      <AlphabetFilter words={words} activeLetter={activeLetter || "A"} />
+      <AlphabetFilter words={words} activeLetter={activeLetter || ""} />
       <div className="bg-surface">
         <WordGrid words={filteredWords} />
         <FilterSection 
